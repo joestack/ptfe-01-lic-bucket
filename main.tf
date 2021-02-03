@@ -60,7 +60,8 @@ resource "aws_kms_alias" "key_alias" {
 
 resource "aws_s3_bucket" "tfe_bootstrap" {
   bucket = local.bucket_name
-  region = data.aws_region.current.name
+  #region = data.aws_region.current.name
+  region = var.aws_region
   acl    = "private"
 
   versioning {
