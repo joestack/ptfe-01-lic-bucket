@@ -117,7 +117,7 @@ resource "null_resource" "copy_license" {
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "2.25.0"
+  version = "2.70.0"
   # insert the 8 required variables here
 
 
