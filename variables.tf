@@ -9,6 +9,10 @@
 #   default     = "joestack-kms"
 # }
 
+variable "region" {
+  
+}
+
 variable "key_name" {
   default = "joestack"
 }
