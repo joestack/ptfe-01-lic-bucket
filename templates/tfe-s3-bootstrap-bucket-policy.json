@@ -1,0 +1,25 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "1",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "${tfe_s3_bootstrap_bucket_arn}",
+                "${tfe_s3_bootstrap_bucket_arn}/*"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "aws:userid": [
+                        "${current_iam_user_arn}",
+                        "${aws_account_id}"
+                    ]
+                }
+            }
+        }
+    ]
+}
