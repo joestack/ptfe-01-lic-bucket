@@ -7,7 +7,7 @@ output "kms_key_arn" {
 }
 
 output "aws_secret_arn" {
-  value = aws_secretsmanager_secret.ptfe_js.arn
+  value = aws_secretsmanager_secret.ptfe_secrets.arn
 }
 output "vpc_id" {
   description = "The ID of the VPC"

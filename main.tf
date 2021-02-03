@@ -111,7 +111,7 @@ resource "null_resource" "copy_license" {
   #}
 
   provisioner "local-exec" {
-    command = "aws s3 cp ${path.root}/tfe-license.rli s3://${var.bucket_name}/tfe-license.rli "
+    command = "aws s3 cp ${path.root}/tfe-license.rli s3://${local.bucket_name}/tfe-license.rli "
   }
 }
 
