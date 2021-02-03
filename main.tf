@@ -49,12 +49,12 @@ resource "aws_kms_key" "tfe_key" {
 }
 
 resource "aws_kms_alias" "key_alias" {
-  name          = "alias/${var.kms_key_alias}"
+  name          = "alias/${local.kms_key_alias}"
   target_key_id = aws_kms_key.tfe_key.id
 }
 
 resource "aws_s3_bucket" "tfe_bootstrap" {
-  bucket = var.bucket_name
+  bucket = local.bucket_name
   region = data.aws_region.current.name
   acl    = "private"
 
