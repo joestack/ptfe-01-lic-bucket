@@ -15,17 +15,17 @@ output "vpc_id" {
 }
 
 # Subnets
-output "ec2_subnet_ids" {
-  description = "List of IDs of private subnets"
-  value       = module.vpc.private_subnets
-}
+# output "ec2_subnet_ids" {
+#   description = "List of IDs of private subnets"
+#   value       = module.vpc.private_subnets
+# }
 
-output "alb_subnet_ids" {
-  description = "List of IDs of public subnets"
-  value       = module.vpc.public_subnets
-}
+# output "alb_subnet_ids" {
+#   description = "List of IDs of public subnets"
+#   value       = module.vpc.public_subnets
+# }
 
-output "rds_subnet_ids" {
-  description = "List of IDs of database subnets"
-  value       = module.vpc.database_subnets
-}
+# output "rds_subnet_ids" {
+#   description = "List of IDs of database subnets"
+#   value       = module.vpc.database_subnets
+# }

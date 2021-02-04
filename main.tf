@@ -3,8 +3,8 @@ provider "aws" {
 }
 
 
-data "aws_region" "current" {
-}
+# data "aws_region" "current" {
+# }
 
 data "aws_caller_identity" "current" {
 }
@@ -43,7 +43,7 @@ data "template_file" "tfe_s3_bootstrap_bucket_policy" {
 resource "aws_kms_key" "tfe_key" {
   description             = "AWS KMS Customer-managed key to encrypt TFE and other resources"
   key_usage               = "ENCRYPT_DECRYPT"
-  #policy                  = data.template_file.kms_key_policy.rendered
+  policy                  = data.template_file.kms_key_policy.rendered # was comment
   deletion_window_in_days = 7
   is_enabled              = true
   enable_key_rotation     = false
@@ -137,7 +137,7 @@ module "vpc" {
 
 
   enable_nat_gateway = true
-  enable_vpn_gateway = true
+  enable_vpn_gateway = false
 
   tags = {
     Terraform = "true"

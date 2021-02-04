@@ -30,8 +30,8 @@ variable "tfe_licence_rli" {
 
 variable "ptfe_secrets" {
   default = {
-    repl_password = "youmustbemadtousethisinproduction"
-    enc_password  = "youreallywanttooverridethesevalues"
+    repl_password = "you_must_be_mad_to_use_this_in_production"
+    enc_password  = "you_really_want_to_override_these_values"
   }
 
   type = map
